@@ -16,7 +16,7 @@ export const getDataPromise = () => {
   return new Promise((resolve, reject)=> {
     setTimeout(() => {
       resolve('Sebastian Tobon');
-    }, 2000)
+    }, 300)
   });
 }
 
@@ -24,7 +24,7 @@ export const getDataPromiseError = () => {
   return new Promise((resolve, reject)=> {
     setTimeout(() => {
       reject('Error');
-    }, 2000)
+    }, 300)
   });
 }
 
@@ -36,3 +36,11 @@ export const getDataPromiseError = () => {
 //   .catch((err) => {
 //     console.error(err);
 //   });
+
+
+export const getUsers =  async() => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users/5');
+  const user = await res.json();
+
+  return user;
+}
